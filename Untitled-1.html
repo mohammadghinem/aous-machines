@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aous Machines - Label & Printing Machines Trading</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        :root {
+            --bg-color: #0b1120;
+            --card-bg: #1e293b;
+            --accent-color: #fbbf24;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --whatsapp-color: #25d366;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+        header { background-color: rgba(11, 17, 32, 0.85); backdrop-filter: blur(12px); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 20px; }
+        .logo { font-size: 22px; font-weight: 700; color: var(--text-main); text-decoration: none; }
+        .logo span { color: var(--accent-color); }
+        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 15px; }
+        .nav-links a:hover { color: var(--accent-color); }
+        .hero { padding: 180px 20px 100px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 44px; font-weight: 800; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero p { color: var(--text-muted); font-size: 18px; margin-bottom: 35px; }
+        .section-container { max-width: 1200px; margin: 60px auto 20px; padding: 0 20px; }
+        .section-title { font-size: 28px; font-weight: 700; margin-bottom: 30px; border-left: 4px solid var(--accent-color); padding-left: 15px; color: var(--text-main); }
+        .machines-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px; }
+        .machine-card { background-color: var(--card-bg); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s, border-color 0.3s; }
+        .machine-card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+        .machine-info { padding: 25px; flex-grow: 1; }
+        .card-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+        .machine-card h3 { font-size: 20px; font-weight: 700; color: var(--text-main); }
+        .badge { background-color: rgba(251, 191, 36, 0.1); color: var(--accent-color); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+        .machine-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 15px; }
+        .machine-meta { font-size: 14px; color: var(--text-muted); border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 15px; }
+        .machine-meta span { display: block; margin-bottom: 5px; }
+        .machine-meta strong { color: var(--text-main); }
+        .btn-whatsapp { display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--whatsapp-color); border: 1px solid rgba(37, 211, 102, 0.2); padding: 12px; text-decoration: none; font-weight: 600; border-radius: 8px; margin: 0 25px 25px; transition: background-color 0.3s, color 0.3s; font-size: 14px; }
+        .btn-whatsapp:hover { background-color: var(--whatsapp-color); color: #000; }
+        
+        /* تصميم كروت الصيانة المخصصة */
+        .service-card { background: linear-gradient(145deg, #1e293b 0%, #111827 100%); }
+        .service-icon { font-size: 32px; color: var(--accent-color); margin-bottom: 15px; }
+
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .contact-box { background-color: var(--card-bg); padding: 30px; border-radius: 12px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .contact-box i { font-size: 28px; color: var(--accent-color); margin-bottom: 15px; }
+        .contact-box h4 { margin-bottom: 10px; font-size: 18px; }
+        .contact-box a, .contact-box p { color: var(--text-muted); text-decoration: none; font-size: 15px; }
+        .contact-box a:hover { color: var(--accent-color); }
+        footer { text-align: center; padding: 30px; margin-top: 80px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted); font-size: 14px; }
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Aous<span>Machines</span></a>
+            <ul class="nav-links">
+                <li><a href="#offset">Offset</a></li>
+                <li><a href="#flexo">Flexo</a></li>
+                <li><a href="#digital">Digital</a></li>
+                <li><a href="#finishing">Finishing</a></li>
+                <li><a href="#services">Services & Maintenance</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Label & Printing Machines Trading</h1>
+        <p>High-quality professional printing equipment & expert technical services.</p>
+    </section>
+
+    <!-- SECTION 1: OFFSET -->
+    <div class="section-container" id="offset">
+        <h2 class="section-title">Offset Printing Machines</h2>
+        <div class="machines-grid">
+            <div class="machine-card">
+                <div class="machine-info">
+                    <div class="card-header-row"><h3>Heidelberg Speedmaster SM 74-4-H</h3><span class="badge">Used</span></div>
+                    <p class="machine-desc">High-performance four-color offset printing press, renowned for reliability and exceptional print quality.</p>
+                    <div class="machine-meta">
+                        <span>Year: <strong>2012</strong></span>
+                        <span>Impressions: <strong>85 Mio.</strong></span>
+                    </div>
+                </div>
+                <a href="https://wa.me" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Inquire via WhatsApp</a>
+            </div>
+            <div class="machine-card">
+                <div class="machine-info">
+                    <div class="card-header-row"><h3>Komori Lithrone LS-529</h3><span class="badge">Excellent</span></div>
+                    <p class="machine-desc">5-color sheetfed offset press with coater, delivering high productivity and fast job changeovers.</p>
+                    <div class="machine-meta">
+                        <span>Year: <strong>2015</strong></span>
+                    </div>
+                </div>
+                <a href="https://wa.me" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Inquire via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: FLEXO -->
+    <div class="section-container" id="flexo">
+        <h2 class="section-title">Flexo Label Machines</h2>
+        <div class="machines-grid">
+            <div class="machine-card">
+                <div class="machine-info">
+                    <div class="card-header-row"><h3>Mark Andy Performance Series P5</h3><span class="badge">Refurbished</span></div>
+                    <p class="machine-desc">Efficient inline flexo press designed for high-quality labels and flexible packaging printing.</p>
+                    <div class="machine-meta">
+                        <span>Year: <strong>2016</strong></span>
+                        <span>Web Width: <strong>330 mm</strong></span>
+                    </div>
+                </div>
+                <a href="https://wa.me" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Inquire via WhatsApp</a>
+            </div>
+            <div class="machine-card">
+                <div class="machine-info">
+                    <div class="card-header-row"><h3>Gallus ECS 340</h3><span class="badge">Used</span></div>
+                    <p class="machine-desc">The bestseller with a core of technical granite, extremely short web path and minimal setup times.</p>
+                    <div class="machine-meta">
+                        <span>Year: <strong>2014</strong></span>
+                    </div>
+                </div>
+                <a href="https://wa.me" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Inquire via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3: DIGITAL -->
+    <div class="section-container" id="digital">
+        <h2 class="section-title">Digital Presses</h2>
+        <div class="machines-grid">
+            <div class="machine-card">
+                <div class="machine-info">
+                    <div class="card-header-row"><h3>HP Indigo 6900</h3><span class="badge">Top Condition</span></div>
+                    <p class="machine-desc">The industry standard for digital narrow-web label production, offering unmatched color matching and versatility.</p>
+                    <div class="machine-meta">
+                        <span>Year: <strong>2018</strong></span>
+                    </div>
+                </div>
+                <a href="https://wa.me" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Inquire via WhatsApp</a>
+            </div>
